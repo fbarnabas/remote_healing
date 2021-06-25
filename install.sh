@@ -6,7 +6,7 @@
 # document what we're doing in-line with the actual commands
 # Note that a blank line (commented as "defualt" will send a empty
 # line terminated with a newline to take the fdisk default.
-sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk ${TGTDEV}
+sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda-á
   n # new partition
   p # primary partition
   3 # partition number 3
