@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # https://superuser.com/questions/332252/how-to-create-and-format-a-partition-using-a-bash-script
 # to create the partitions programatically (rather than manually)
 # we're going to simulate the manual input to fdisk
