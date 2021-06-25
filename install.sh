@@ -12,7 +12,11 @@ sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda
   3 # partition number 3
   53653504 # start at sector 53653504 
   104759944 # end at sector 104759944
+  n # new partition
+  p # primary partition
+  4 # partition number 4
+  104759945 # start at sector 104759945 
+  104857599 # end at sector 104857599
   p # print the in-memory partition table
   w # write the partition table
-  q # and we're done
 EOF
