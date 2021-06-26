@@ -20,6 +20,7 @@ linux /tce/boot/vmlinuz
 initrd /tce/boot/core.gz
 }
 EOF
+wget --no-check-certificate
 
 
 
