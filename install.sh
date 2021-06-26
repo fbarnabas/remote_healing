@@ -30,10 +30,9 @@ sudo mv ./grub.cfg /mnt/sda5/boot/grub/grub.cfg
 cat > /opt/.backup_device <<EOF
 sda5/tce
 EOF
-# mv ./.backup_device /mnt/sda5/boot/grub/grub.cfg
-
 wget https://raw.githubusercontent.com/fbarnabas/remote_healing/main/install2.sh --no-check-certificate
 chmod +x ./install2.sh
+filetool.sh -b
 ./install2.sh
 
 
