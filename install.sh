@@ -12,7 +12,7 @@ cp -p /mnt/sr0/boot/* /mnt/sda5/boot
 mkdir -p /mnt/sda5/tce
 touch /mnt/sda5/tce/mydata.tgz
 tce-load -wi grub2-multi.tcz
-grub-install /dev/sda
+sudo grub-install /dev/sda
 
 
 
