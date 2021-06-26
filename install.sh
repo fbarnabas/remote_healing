@@ -21,7 +21,7 @@ menuentry "Windows 10" {
 	chainloader +1
 }
 menuentry "Tiny Core Linux" {
-set root="(hd0,msdos5)"
+set root=(hd0,5)
 linux /tce/boot/vmlinuz
 initrd /tce/boot/core.gz
 }
