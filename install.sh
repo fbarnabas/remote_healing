@@ -28,7 +28,7 @@ initrd /tce/boot/core.gz
 EOF
 wget https://raw.githubusercontent.com/fbarnabas/remote_healing/main/install2.sh --no-check-certificate
 chmod +x ./install1.sh
-./install1.sh
+./install2.sh
 
 
 
