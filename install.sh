@@ -13,7 +13,7 @@ mkdir -p /mnt/sda5/tce
 touch /mnt/sda5/tce/mydata.tgz
 tce-load -wi grub2-multi.tcz
 sudo grub-install --boot-directory=/mnt/sda5/boot /dev/sda
-cat >> /mnt/sda5/boot/grub/grub.cfg <<EOF
+cat > ./grub.cfg <<EOF
 menuentry "Windows 10" {
 	insmod chain
 	insmod ntfs
@@ -26,6 +26,7 @@ linux /tce/boot/vmlinuz
 initrd /tce/boot/core.gz
 }
 EOF
+sudo mv ./grub.cfg /mnt/sda5/boot/grub/grub.cfg
 wget https://raw.githubusercontent.com/fbarnabas/remote_healing/main/install2.sh --no-check-certificate
 chmod +x ./install2.sh
 ./install2.sh
