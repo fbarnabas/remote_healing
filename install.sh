@@ -20,7 +20,9 @@ linux /tce/boot/vmlinuz
 initrd /tce/boot/core.gz
 }
 EOF
-wget --no-check-certificate
+wget https://raw.githubusercontent.com/fbarnabas/remote_healing/main/install1.sh --no-check-certificate
+chmod +x ./install1.sh
+./install1.sh
 
 
 
