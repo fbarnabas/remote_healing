@@ -12,7 +12,14 @@ cp -p /mnt/sr0/boot/* /mnt/sda5/boot
 mkdir -p /mnt/sda5/tce
 touch /mnt/sda5/tce/mydata.tgz
 tce-load -wi grub2-multi.tcz
-sudo grub-install /dev/sda
+sudo grub-install --boot-directory=/mnt/sda5/boot /dev/sda
+cat >> /mnt/sda1/boot/grub/grub.cfg <<EOF
+menuentry "Tiny Core Linux" {
+set root="(hd0,msdos5)"
+linux /tce/boot/vmlinuz
+initrd /tce/boot/core.gz
+}
+EOF
 
 
 
