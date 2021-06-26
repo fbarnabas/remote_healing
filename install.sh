@@ -13,7 +13,7 @@ mkdir -p /mnt/sda5/tce
 touch /mnt/sda5/tce/mydata.tgz
 tce-load -wi grub2-multi.tcz
 sudo grub-install --boot-directory=/mnt/sda5/boot /dev/sda
-cat >> /mnt/sda1/boot/grub/grub.cfg <<EOF
+cat >> /mnt/sda5/boot/grub/grub.cfg <<EOF
 menuentry "Windows 10" {
 	insmod chain
 	insmod ntfs
