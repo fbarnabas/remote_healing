@@ -11,7 +11,7 @@ sudo mkdir -p /mnt/sda5/boot
 sudo cp -p -r /mnt/sr0/boot/* /mnt/sda5/boot
 sudo mkdir -p /mnt/sda5/tce
 sudo cp -p -r /mnt/sr0/cde/* /mnt/sda5/tce
-touch /mnt/sda5/tce/mydata.tgz
+sudo touch /mnt/sda5/tce/mydata.tgz
 tce-load -wi grub2-multi.tcz
 sudo grub-install --boot-directory=/mnt/sda5/boot /dev/sda
 cat > ./grub.cfg <<EOF
