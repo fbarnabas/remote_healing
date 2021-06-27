@@ -8,9 +8,9 @@ mkfs.ext4 /dev/sda5
 mkdir /mnt/sda5
 sudo mount -t ext4 /dev/sda5 /mnt/sda5
 sudo mkdir -p /mnt/sda5/boot
-cp -p -r /mnt/sr0/boot/* /mnt/sda5/boot
+sudo cp -p -r /mnt/sr0/boot/* /mnt/sda5/boot
 sudo mkdir -p /mnt/sda5/tce
-cp -p -r /mnt/sr0/cde/* /mnt/sda5/tce
+sudo cp -p -r /mnt/sr0/cde/* /mnt/sda5/tce
 touch /mnt/sda5/tce/mydata.tgz
 tce-load -wi grub2-multi.tcz
 sudo grub-install --boot-directory=/mnt/sda5/boot /dev/sda
