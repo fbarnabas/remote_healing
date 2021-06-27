@@ -23,7 +23,7 @@ menuentry "Windows 10" {
 }
 menuentry "Tiny Core Linux" {
 set root=(hd0,5)
-linux /tce/boot/vmlinuz
+linux /boot/vmlinuz
 initrd /boot/core.gz
 }
 EOF
