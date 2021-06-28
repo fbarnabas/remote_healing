@@ -26,15 +26,25 @@ set root=(hd0,5)
 linux /boot/vmlinuz
 initrd /boot/core.gz
 }
+default=2
+timeout=4
 EOF
 sudo mv ./grub.cfg /mnt/sda5/boot/grub/grub.cfg
 cat > /opt/.backup_device <<EOF
 sda5/tce
 EOF
-wget https://raw.githubusercontent.com/fbarnabas/remote_healing/main/install2.sh --no-check-certificate
-chmod +x ./install2.sh
-filetool.sh -b
-./install2.sh
+#wget https://raw.githubusercontent.com/fbarnabas/remote_healing/main/install2.sh --no-check-certificate
+#chmod +x ./install2.sh
+chmod 775 -R /mnt/sda5/tce
+tce-load -wi openssh.tcz
+sudo cp /usr/local/etc/ssh/sshd_config.orig /usr/local/etc/ssh/sshd_config
+sudo /usr/local/etc/init.d/openssh start
+tce-load -wi ntfsprogs.tcz
+mkdir /mnt/sda3
+sudo mount -t ext4 /dev/sda3 /mnt/sda3
+sudo mkdir -p /mnt/sda3/images
+ntfsclone --save-image --output /mnt/sda3/images/win10-sda1.img /dev/sda1
 
+filetool.sh -b
 
 
