@@ -39,10 +39,15 @@ chmod 775 -R /mnt/sda5/tce
 tce-load -wi openssh.tcz
 sudo cp /usr/local/etc/ssh/sshd_config.orig /usr/local/etc/ssh/sshd_config
 sudo /usr/local/etc/init.d/openssh start
+cat >> /opt/bootlocal.sh <<EOF
+sudo /usr/local/etc/init.d/openssh start
+EOF
+sudo passwd tc 12345678Ab
 tce-load -wi ntfsprogs.tcz
 mkdir /mnt/sda3
 sudo mount -t ext4 /dev/sda3 /mnt/sda3
-sudo mkdir -p /mnt/sda3/images
+sudo chown -R tc /mnt/sda3
+mkdir -p /mnt/sda3/images
 ntfsclone --save-image --output /mnt/sda3/images/win10-sda1.img /dev/sda1
 
 filetool.sh -b
