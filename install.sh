@@ -39,10 +39,13 @@ chmod 775 -R /mnt/sda5/tce
 tce-load -wi openssh.tcz
 sudo cp /usr/local/etc/ssh/sshd_config.orig /usr/local/etc/ssh/sshd_config
 sudo /usr/local/etc/init.d/openssh start
-cat >> /opt/bootlocal.sh <<EOF
+cat > bootlocal.sh <<EOF
+#!/bin/sh
 sudo /usr/local/etc/init.d/openssh start
 EOF
-sudo passwd tc 12345678Ab
+chmod +x bootlocal.sh
+sudo mv bootlocal.sh /opt/bootlocal.sh
+sudo passwd tc
 tce-load -wi ntfsprogs.tcz
 mkdir /mnt/sda3
 sudo mount -t ext4 /dev/sda3 /mnt/sda3
