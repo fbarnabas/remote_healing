@@ -45,6 +45,9 @@ sudo /usr/local/etc/init.d/openssh start
 EOF
 chmod +x bootlocal.sh
 sudo mv bootlocal.sh /opt/bootlocal.sh
+cat >> /opt/.fieltool.lst <<EOF
+usr/local/etc/ssh/sshd_config
+EOF
 sudo passwd tc
 tce-load -wi ntfsprogs.tcz
 mkdir /mnt/sda3
