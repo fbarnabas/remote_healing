@@ -47,6 +47,7 @@ chmod +x bootlocal.sh
 sudo mv bootlocal.sh /opt/bootlocal.sh
 cat >> /opt/.filetool.lst <<EOF
 usr/local/etc/ssh/sshd_config
+etc/shadow
 EOF
 sudo passwd tc
 tce-load -wi ntfsprogs.tcz
