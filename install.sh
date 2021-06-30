@@ -36,7 +36,8 @@ cat > /opt/.backup_device <<EOF
 EOF
 #wget https://raw.githubusercontent.com/fbarnabas/remote_healing/main/install2.sh --no-check-certificate
 #chmod +x ./install2.sh
-sudo chmod 775 -R /mnt/sda5/tce
+sudo chown tc -R /mnt/sda5/tce
+#sudo chmod 775 -R /mnt/sda5/tce
 tce-load -wi openssh.tcz
 sudo cp /usr/local/etc/ssh/sshd_config.orig /usr/local/etc/ssh/sshd_config
 sudo /usr/local/etc/init.d/openssh start
@@ -50,7 +51,7 @@ cat >> /opt/.filetool.lst <<EOF
 usr/local/etc/ssh
 etc/shadow
 EOF
-sudo passwd tc
+# sudo passwd tc
 tce-load -wi ntfsprogs.tcz
 mkdir /mnt/sda3
 sudo mount -t ext4 /dev/sda3 /mnt/sda3
