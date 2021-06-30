@@ -14,15 +14,15 @@ If the primary operating system is already set up and it occupies the total disk
  After the resize is complete, create 2 new partitions on the empty place. I create a 24950 MB partition for storing the backup images and a 50MB partition for the Linux installation.
 I assume that all user data is stored on file servers and not locally, as this is the preferred setup in corporate environments. An operating system restore will not affect user data this way.
 Download following release:
+
 http://tinycorelinux.net/12.x/x86/release/TinyCore-current.iso
+
 I demonstrate the possibility of the remote healing on a dual-boot virtual machine run by Virtualbox.  The virtual machine can boot this iso file directly, on physical hardware you need to write the iso in bootable format on CD or USB drive. For USB drives Rufus, Unetbootin or similar software can be used.  After the iso file has booted on the machine, the remaining steps are the same both for virtual machines and physical hardware.
 02 
 Right click on the desktop and select system tools, apps, click apps, Cloud (Remote) Browse. In the top search bar enter curl, select curl in the list and click go. This will download and install curl.
 Right click on the desktop and select applications, then terminal. Enter following command
 
-
- curl –L tinyurl.com/98myfbmv | sh
- 
+curl –L tinyurl.com/98myfbmv | sh
  
 this will download and execute the install.sh script.
 This script formats the sda3 and sda5 partitions, copies the files needed to run  TinyCore Linux from the hard disk os ssd, installs the grub boot manager, sets up the boot menu, installs ssh for remote access and ntfsprogs which is used to create images of the windows partitions and can it can also restore the images to disk, if needed.
