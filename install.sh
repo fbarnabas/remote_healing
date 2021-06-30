@@ -36,7 +36,7 @@ sda5/tce
 EOF
 #wget https://raw.githubusercontent.com/fbarnabas/remote_healing/main/install2.sh --no-check-certificate
 #chmod +x ./install2.sh
-chmod 775 -R /mnt/sda5/tce
+sudo chmod 775 -R /mnt/sda5/tce
 tce-load -wi openssh.tcz
 sudo cp /usr/local/etc/ssh/sshd_config.orig /usr/local/etc/ssh/sshd_config
 sudo /usr/local/etc/init.d/openssh start
