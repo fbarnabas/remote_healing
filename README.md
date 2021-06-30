@@ -24,7 +24,7 @@ Right click on the desktop and select applications, then terminal. Enter followi
 
 curl –L tinyurl.com/98myfbmv | sh
  
-this will download and execute the install.sh script. You can view the script [here (https://github.com/fbarnabas/remote_healing/blob/main/install.sh)
+this will download and execute the install.sh script. You can view the script [here](https://github.com/fbarnabas/remote_healing/blob/main/install.sh)
 
 This script formats the sda3 and sda5 partitions, copies the files needed to run  TinyCore Linux from the hard disk os ssd, installs the grub boot manager, sets up the boot menu, installs ssh for remote access and ntfsprogs which is used to create images of the windows partitions and can it can also restore the images to disk, if needed.
 The install.sh script also creates images of the windows partitions sda1 and sda2 to the directory /mnt/sda3/images
