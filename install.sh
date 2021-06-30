@@ -58,9 +58,9 @@ sudo chown -R tc /mnt/sda3
 mkdir -p /mnt/sda3/images
 ntfsclone --save-image --output /mnt/sda3/images/win10-sda1.img /dev/sda1
 cd /mnt/sda5/tce/optional
-sudo cp /tmp/tce/optional/nano.tcz .
-sudo cp /tmp/tce/optional/nano.tcz.dep .
-sudo cp /tmp/tce/optional/nano.tcz.md5.txt .
+#sudo cp /tmp/tce/optional/nano.tcz .
+#sudo cp /tmp/tce/optional/nano.tcz.dep .
+#sudo cp /tmp/tce/optional/nano.tcz.md5.txt .
 sudo cp /tmp/tce/optional/openssl-1.1.1.tcz .
 sudo cp /tmp/tce/optional/openssl-1.1.1.tcz.md5.txt .
 sudo cp /tmp/tce/optional/openssh.tcz .
@@ -68,6 +68,10 @@ sudo cp /tmp/tce/optional/openssh.tcz.dep .
 sudo cp /tmp/tce/optional/openssh.tcz.md5.txt .
 sudo cp /tmp/tce/optional/ntfsprogs.tcz .
 sudo cp /tmp/tce/optional/ntfsprogs.tcz.md5.txt .
+cat > /mnt/sda5/tce/onboot.lst <<EOF
+openssh
+ntfsprogs
+EOF
 filetool.sh -b
 
 
