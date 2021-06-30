@@ -32,7 +32,7 @@ timeout=4
 EOF
 sudo mv ./grub.cfg /mnt/sda5/boot/grub/grub.cfg
 cat > /opt/.backup_device <<EOF
-sda5/tce
+/mnt/sda5/tce/optional
 EOF
 #wget https://raw.githubusercontent.com/fbarnabas/remote_healing/main/install2.sh --no-check-certificate
 #chmod +x ./install2.sh
@@ -58,6 +58,10 @@ sudo chown -R tc /mnt/sda3
 mkdir -p /mnt/sda3/images
 ntfsclone --save-image --output /mnt/sda3/images/win10-sda1.img /dev/sda1
 cd /mnt/sda5/tce/optional
+sudo cp /tmp/tce/optional/nano.tcz .
+sudo cp /tmp/tce/optional/nano.md5.txt .
+sudo cp /tmp/tce/optional/openssl-1.1.1.tcz .
+sudo cp /tmp/tce/optional/openssl-1.1.1.tcz.md5.txt .
 sudo cp /tmp/tce/optional/openssh.tcz .
 sudo cp /tmp/tce/optional/openssh.tcz.dep .
 sudo cp /tmp/tce/optional/openssh.tcz.md5.txt .
