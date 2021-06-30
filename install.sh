@@ -70,7 +70,7 @@ sudo cp /tmp/tce/optional/openssh.tcz.md5.txt .
 sudo cp /tmp/tce/optional/ntfsprogs.tcz .
 sudo cp /tmp/tce/optional/ntfsprogs.tcz.md5.txt .
 sudo chown tc -R /mnt/sda5/tce
-cat > /mnt/sda5/tce/onboot.lst <<EOF
+cat >> /mnt/sda5/tce/onboot.lst <<EOF
 openssh
 ntfsprogs
 EOF
