@@ -2,8 +2,9 @@
 
 Introduction
 
-Introduction
+
 Imagine you are the system administrator of a company, which has offices in different towns. One day you receive a phone call, saying a PC in a remote office won’t boot. You have to travel to this office to check, what is the situation and repair this PC… or maybe you can do it with remote administration? This might sound impossible, but can be done, if you have network connection to the PC which needs to be repaired and some preparations have made in advance. These preparations include installing a secondary operating system to another disk partition of the PC, creating a dual-boot system. Additionally, the secondary system must allow remote administration. In this example I will install Tiny Core Linux as secondary operating system, and setup openssh to allow remote access. I have chosen Tiny Core Linux because it requires exceptionally small disk space, the installation I use in this example fits on a 50MB partition. The primary operating system will be Windows 10 as it is the most widespread desktop operating system, but other Windows versions and non-Microsoft operating systems can be remote healed the same way. Unfortunately most hardware errors cannot be remote repaired, this demonstration focuses on software errors like Windows update malfunction, virus attack or user error.
+
 
 Preparations
 If the primary operating system is already set up and it occupies the total disk space, its partition needs to be shrinked by at least 50MB to have enough space for the Linux installation. You may shrink more if you would like to store copies of the system image files on the local disk. This depends on the available free disk space as well. 
@@ -18,7 +19,11 @@ I demonstrate the possibility of the remote healing on a dual-boot virtual machi
 02 
 Right click on the desktop and select system tools, apps, click apps, Cloud (Remote) Browse. In the top search bar enter curl, select curl in the list and click go. This will download and install curl.
 Right click on the desktop and select applications, then terminal. Enter following command
+
+
  curl –L tinyurl.com/98myfbmv | sh
+ 
+ 
 this will download and execute the install.sh script.
 This script formats the sda3 and sda5 partitions, copies the files needed to run  TinyCore Linux from the hard disk os ssd, installs the grub boot manager, sets up the boot menu, installs ssh for remote access and ntfsprogs which is used to create images of the windows partitions and can it can also restore the images to disk, if needed.
 The install.sh script also creates images of the windows partitions sda1 and sda2 to the directory /mnt/sda3/images
@@ -34,4 +39,6 @@ I connect via ssh using Putty (you may use any other ssh client)
  I enter the password for the user tc. After the login I run the command 
 ./restorewin.sh
   to restore the previous contents of the windows partitions. This script was downloaded and copied to the home directory of the tc user during installation. The content of this script can be found [here] (https://github.com/fbarnabas/remote_healing/blob/main/restorewin.sh)
+
+
 After the image has been restored, Windows boots as new.
