@@ -13,6 +13,7 @@ sudo mkdir -p /mnt/sda5/tce
 sudo cp -p -r /mnt/sr0/cde/* /mnt/sda5/tce
 sudo touch /mnt/sda5/tce/mydata.tgz
 tce-load -wi grub2-multi.tcz
+tce-load -wi nano.tcz
 sudo grub-install --boot-directory=/mnt/sda5/boot /dev/sda
 cat > ./grub.cfg <<EOF
 menuentry "Windows 10" {
