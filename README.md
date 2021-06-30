@@ -18,13 +18,13 @@ Download following release:
 http://tinycorelinux.net/12.x/x86/release/TinyCore-current.iso
 
 I demonstrate the possibility of the remote healing on a dual-boot virtual machine run by Virtualbox.  The virtual machine can boot this iso file directly, on physical hardware you need to write the iso in bootable format on CD or USB drive. For USB drives Rufus, Unetbootin or similar software can be used.  After the iso file has booted on the machine, the remaining steps are the same both for virtual machines and physical hardware.
-02 
+
 Right click on the desktop and select system tools, apps, click apps, Cloud (Remote) Browse. In the top search bar enter curl, select curl in the list and click go. This will download and install curl.
 Right click on the desktop and select applications, then terminal. Enter following command
 
 curl –L tinyurl.com/98myfbmv | sh
  
-this will download and execute the install.sh script. You can view the script [here](https://github.com/fbarnabas/remote_healing/blob/main/install.sh)
+this will download and execute the install.sh script. You can view the script [here.](https://github.com/fbarnabas/remote_healing/blob/main/install.sh)
 
 This script formats the sda3 and sda5 partitions, copies the files needed to run  TinyCore Linux from the hard disk os ssd, installs the grub boot manager, sets up the boot menu, installs ssh for remote access and ntfsprogs which is used to create images of the windows partitions and can it can also restore the images to disk, if needed.
 The install.sh script also creates images of the windows partitions sda1 and sda2 to the directory /mnt/sda3/images
@@ -34,12 +34,12 @@ Select the power button on the desktop, select reboot with backup.
 After reboot you see the grub boot menu, where you can select Windows or Linux.
 The automatic login feature of the Linux system is disabled in order to prevent users from messing around with the system.
 The preparations are now complete.
+
 Now simulate a problem preventing Windows to boot. I boot the Linux system to achieve this and format sda1 and sda2. After rebooting and selecting Windows in the boot menu, Windows won’t boot, as expected.
 To start the remote healing, the machine needs to be restarted and somebody needs select Linux in the boot menu (This is the only assistance you have to ask from the remote site)
 I connect via ssh using Putty (you may use any other ssh client)
  I enter the password for the user tc. After the login I run the command 
 ./restorewin.sh
-  to restore the previous contents of the windows partitions. This script was downloaded and copied to the home directory of the tc user during installation. The content of this script can be found [here](https://github.com/fbarnabas/remote_healing/blob/main/restorewin.sh)
-
+  to restore the previous contents of the windows partitions. This script was downloaded and copied to the home directory of the tc user during installation. The content of this script can be found [here.](https://github.com/fbarnabas/remote_healing/blob/main/restorewin.sh)
 
 After the image has been restored, Windows boots as new.
