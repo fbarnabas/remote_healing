@@ -46,7 +46,7 @@ EOF
 chmod +x bootlocal.sh
 sudo mv bootlocal.sh /opt/bootlocal.sh
 cat >> /opt/.filetool.lst <<EOF
-usr/local/etc/ssh/sshd_config
+usr/local/etc/ssh
 etc/shadow
 EOF
 sudo passwd tc
