@@ -45,7 +45,7 @@ sudo /usr/local/etc/init.d/openssh start
 EOF
 chmod +x bootlocal.sh
 sudo mv bootlocal.sh /opt/bootlocal.sh
-cat >> /opt/.fieltool.lst <<EOF
+cat > /opt/.filetool.lst <<EOF
 usr/local/etc/ssh/sshd_config
 EOF
 sudo passwd tc
