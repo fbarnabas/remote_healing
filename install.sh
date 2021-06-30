@@ -57,7 +57,7 @@ sudo mount -t ext4 /dev/sda3 /mnt/sda3
 sudo chown -R tc /mnt/sda3
 mkdir -p /mnt/sda3/images
 ntfsclone --save-image --output /mnt/sda3/images/win10-sda1.img /dev/sda1
-cd /mnt/sda5/tce
+cd /mnt/sda5/tce/optional
 sudo cp /tmp/tce/optional/openssh.tcz .
 sudo cp /tmp/tce/optional/openssh.tcz.dep .
 sudo cp /tmp/tce/optional/openssh.tcz.md5.txt .
