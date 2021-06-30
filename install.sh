@@ -58,11 +58,11 @@ sudo chown -R tc /mnt/sda3
 mkdir -p /mnt/sda3/images
 ntfsclone --save-image --output /mnt/sda3/images/win10-sda1.img /dev/sda1
 cd /mnt/sda5/tce
-cp /tmp/tce/optional/openssh.tcz
-cp /tmp/tce/optional/openssh.tcz.dep
-cp /tmp/tce/optional/openssh.tcz.md5.txt
-cp /tmp/tce/optional/ntfsprogs.tcz
-cp /tmp/tce/optional/ntfsprogs.tcz.md5.txt
+sudo cp /tmp/tce/optional/openssh.tcz .
+sudo cp /tmp/tce/optional/openssh.tcz.dep .
+sudo cp /tmp/tce/optional/openssh.tcz.md5.txt .
+sudo cp /tmp/tce/optional/ntfsprogs.tcz .
+sudo cp /tmp/tce/optional/ntfsprogs.tcz.md5.txt .
 filetool.sh -b
 
 
