@@ -9,7 +9,7 @@ Preparations
 If the primary operating system is already set up and it occupies the total disk space, its partition needs to be shrinked by at least 50MB to have enough space for the Linux installation. You may shrink more if you would like to store copies of the system image files on the local disk. This depends on the available free disk space as well. 
 
 Inline-style: 
-![Shrink partition](https://user-images.githubusercontent.com/73483641/124018685-641a0900-d9e8-11eb-9a71-d948e97ef8f0.png")
+![Shrink partition](https://user-images.githubusercontent.com/73483641/124018685-641a0900-d9e8-11eb-9a71-d948e97ef8f0.png)
 
  After the resize is complete, create 2 new partitions on the empty place. I create a 24950 MB partition for storing the backup images and a 50MB partition for the Linux installation.
 I assume that all user data is stored on file servers and not locally, as this is the preferred setup in corporate environments. An operating system restore will not affect user data this way.
