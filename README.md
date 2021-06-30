@@ -39,7 +39,7 @@ To start the remote healing, the machine needs to be restarted and somebody need
 I connect via ssh using Putty (you may use any other ssh client)
  I enter the password for the user tc. After the login I run the command 
 ./restorewin.sh
-  to restore the previous contents of the windows partitions. This script was downloaded and copied to the home directory of the tc user during installation. The content of this script can be found [here] (https://github.com/fbarnabas/remote_healing/blob/main/restorewin.sh)
+  to restore the previous contents of the windows partitions. This script was downloaded and copied to the home directory of the tc user during installation. The content of this script can be found [here](https://github.com/fbarnabas/remote_healing/blob/main/restorewin.sh)
 
 
 After the image has been restored, Windows boots as new.
