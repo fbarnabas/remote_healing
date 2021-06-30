@@ -31,9 +31,9 @@ default=2
 timeout=4
 EOF
 sudo mv ./grub.cfg /mnt/sda5/boot/grub/grub.cfg
-cat > /opt/.backup_device <<EOF
-/mnt/sda5/tce/optional
-EOF
+#cat > /opt/.backup_device <<EOF
+#/mnt/sda5/tce/optional
+#EOF
 #wget https://raw.githubusercontent.com/fbarnabas/remote_healing/main/install2.sh --no-check-certificate
 #chmod +x ./install2.sh
 sudo chown tc -R /mnt/sda5/tce
